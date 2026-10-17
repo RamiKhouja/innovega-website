@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #105157;
+  --color-primary-dark: #0A3D4D; 
+  --color-secondary: #31BC85; 
+  --color-secondary-dark: #1A8B5D;
+  --color-tertiary: #FF5733; /* Example: a hex color */
+  --color-danger: hsl(0 100% 50%); /* Example: a red using HSL */
+}
+
+.leaf {
+  @apply rounded-tl-full rounded-br-full;
+}
+
+:root {
+  --font-default: var(--font-oxygen);
+}
+
+html.ar {
+  --font-default: var(--font-rubik);
+}
+
+body {
+  font-family: var(--font-default), sans-serif;
+}
+
+@layer utilities {
+  @keyframes sway {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-10px);
+    }
+  }
+
+  .animate-sway {
+    animation: sway 4s ease-in-out infinite;
+  }
+}
