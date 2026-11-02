@@ -2,7 +2,7 @@ import './globals.css';
 import I18nProvider from './providers/I18nProvider';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Noto_Kufi_Arabic, Oxygen, Rubik } from 'next/font/google';
+import { Oxygen } from 'next/font/google';
 
 export const metadata = {
   title: 'Innovega',
@@ -11,20 +11,6 @@ export const metadata = {
     icon: '/favicon.ico',
   },
 };
-
-const kufi = Noto_Kufi_Arabic({
-  weight: ['400', '700'],
-  subsets: ['arabic'],
-  variable: '--font-kufi',
-  display: 'swap',
-});
-
-const rubik = Rubik({
-  weight: ['400', '700'],
-  subsets: ['arabic'],
-  variable: '--font-rubik',
-  display: 'swap',
-});
 
 const oxygen = Oxygen({
   weight: ['400', '700'],
@@ -35,8 +21,16 @@ const oxygen = Oxygen({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${rubik.variable} ${oxygen.variable}`}>
-      <body>
+    <html lang="en" className={oxygen.variable}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body suppressHydrationWarning>
         <I18nProvider>{children}</I18nProvider>
       </body>
     </html>

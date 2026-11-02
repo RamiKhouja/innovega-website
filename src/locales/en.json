@@ -2,12 +2,29 @@
   "welcome": "Welcome",
   "login": "Login",
   "logout": "Logout",
-  "hero-title": "Smart Irrigation, Anywhere. Anytime.",
+  "hero-title": "Smart Irrigation, Smarter Water Management.",
   "smart-irrigation": "Smart Irrigation",
   "anywhere-anytime": "Anywhere. Anytime.",
-  "hero-subtitle": "Wireless, solar-powered, AI-enhanced irrigation you control from anywhere in the world.",
-  "get-started": "Get started",
-  "live-demo": "Watch Demo",
+  "hero-subtitle": "Manage pumps, valves, and irrigation schedules from anywhere with a wireless, solar-powered system built for modern agriculture.",
+  "get-started": "Request a Demo",
+  "demo-request-title": "Request a demo",
+  "demo-request-description": "Tell us a little about yourself and choose a convenient meeting date.",
+  "name": "Name",
+  "name-placeholder": "Your name",
+  "company": "Company",
+  "state": "State",
+  "city": "City",
+  "meeting-date": "Meeting date",
+  "choose-date": "Choose a date",
+  "previous-month": "Previous month",
+  "next-month": "Next month",
+  "calendar-minimum-date": "Available from three days after today.",
+  "optional": "optional",
+  "request-demo": "Request a demo",
+  "cancel": "Cancel",
+  "close": "Close",
+  "demo-request-sent": "Your demo request was sent successfully!",
+  "live-demo": "See How It Works",
   "who-we-are": "Who We Are",
   "about-p1": "Innovega is an IoT company based in Tunisia, focused on building cutting-edge smart agriculture systems.",
   "about-p2": "Our first product, Innovega Flow, is a fully wireless, internet-connected irrigation system designed for farms of any size.",
@@ -15,27 +32,23 @@
   "learn-more": "Learn More",
   "why-choose-innovega": "Why Choose Innovega",
   "why-choose-innovega-desc": "We offer a wide range of services to help you achieve your goals.",
-  "feature-control-anywhere": "Control from anywhere",
-  "feature-control-anywhere-desc": "Remotely manage your entire irrigation system via mobile or web, no matter where you are.",
-  "feature-water-reports": "Exact water consumption reports",
-  "feature-water-reports-desc": "View detailed water usage statistics by the hour, day, week, or year to optimize resources.",
-  "feature-solar-energy": "Solar-powered & low energy use",
-  "feature-solar-energy-desc": "Enjoy a self-sustaining system with solar panels and ultra-low power consumption.",
-  "feature-pump-valve": "Works with any pump or valve",
-  "feature-pump-valve-desc": "Compatible with all pump types, solenoid valves, and drip irrigation systems.",
-  "feature-lora-wireless": "Long-range wireless (6km+)",
-  "feature-lora-wireless-desc": "Connect up to 1000+ devices over distances of 6km or more with our custom LoRa protocol.",
-  "feature-secure-comm": "Secure & reliable communication protocol",
-  "feature-secure-comm-desc": "Encrypted communication with acknowledgements ensures every command is delivered safely.",
-  "feature-no-wires": "No wires, no hassle",
-  "feature-no-wires-desc": "Fully wireless design eliminates costly cables, rodent damage, and plowing disruptions.",
-  "feature-ai-ready": "AI-ready for automated irrigation",
-  "feature-ai-ready-desc": "Our upcoming AI module will intelligently adjust irrigation based on soil, plant, and weather data.",
+  "features-title": "Why Innovega Stands Out",
+  "features-subtitle": "Designed for real field conditions, Innovega Flow combines long-range wireless connectivity, energy efficiency, reliability, and flexible equipment integration.",
+  "feature-solar-energy": "Solar-Powered & Low Energy",
+  "feature-solar-energy-desc": "Solar-powered controllers with ultra-low energy consumption and 5–7 days of battery autonomy.",
+  "feature-lora-wireless": "Long-Range Wireless Communication",
+  "feature-lora-wireless-desc": "LoRa connectivity with 12 km+ range in suitable conditions, designed to support 1,000+ nodes per gateway.",
+  "feature-secure-comm": "Secure & Reliable Protocol",
+  "feature-secure-comm-desc": "Proprietary InnoProtocol with device authentication, signed commands, acknowledgements (ACK), and automatic retries.",
+  "feature-pump-valve": "Works with Pumps, Valves & Meters",
+  "feature-pump-valve-desc": "Integrate compatible pumps, solenoid valves, and water meters into one connected irrigation management system.",
+  "feature-no-wires": "No Communication Wires, No Hassle",
+  "feature-no-wires-desc": "Wireless field communication eliminates long network cable runs, reducing installation costs, trenching, and cable damage.",
   "en": "English",
-  "our-services": "Our Services",
-  "services-intro": "We offer a wide range of services to help you achieve your goals. Our team of experts is dedicated to providing",
-  "remote-irrigation-control": "Remote Irrigation Control",
-  "remote-irrigation-control-desc": "Easily manage your entire irrigation system from your phone or computer.",
+  "our-services": "Smart Irrigation Starts Here",
+  "services-intro": "From remote control to AI-powered optimization, Innovega brings everything you need to manage irrigation efficiently into one connected platform.",
+  "remote-irrigation-control": "Remote Control & Scheduling",
+  "remote-irrigation-control-desc": "Take full control of your irrigation system from anywhere, anytime.",
   "monitoring-analytics": "Monitoring & Analytics",
   "monitoring-analytics-desc": "Get real-time data and detailed reports to optimize water usage.",
   "smart-alerts": "Smart Alerts",
@@ -87,6 +100,50 @@
   "about": "About",
   "features": "Features",
   "contact": "Contact",
-  "product": "Product"
+  "product": "Product",
+  "video-demos-nav": "Demos",
+  "vegamind-nav": "Vegamind"
+  ,"gallery-title": "Built for the Field. Proven in Real Operations"
+  ,"gallery-description": "Innovega Flow is more than a concept. Our wireless irrigation technology is deployed on agricultural farms in Qatar, connecting field equipment to a centralized monitoring and control platform."
+  ,"gallery-valve-controller-title": "Wireless valve controller"
+  ,"gallery-valve-controller-description": "Control irrigation valves remotely without trenching or cabling."
+  ,"gallery-gateway-title": "Field gateway"
+  ,"gallery-gateway-description": "Connect every device in the field to one reliable control platform."
+  ,"gallery-night-controller-title": "Reliable day and night"
+  ,"gallery-night-controller-description": "Designed to keep irrigation operations running in demanding conditions."
+  ,"gallery-pump-controller-title": "Pump controller"
+  ,"gallery-pump-controller-description": "Manage pumps and irrigation schedules from anywhere."
+  ,"gallery-flowmeter-title": "Flow monitoring"
+  ,"gallery-flowmeter-description": "Track water movement in real time and spot issues early."
+  ,"gallery-pump-controller-v1-title": "Smart field hardware"
+  ,"gallery-pump-controller-v1-description": "Solar-powered equipment built for practical field deployment."
+  ,"gallery-valve-controller-v2-title": "Built to scale"
+  ,"gallery-valve-controller-v2-description": "Expand your connected irrigation network as your operation grows."
+  ,"gallery-valve-video-title": "Remote Valve Control"
+  ,"gallery-valve-video-description": "Watch irrigation valves open and close remotely, directly from the Innovega application."
+  ,"gallery-pump-video-title": "Remote Pump Control"
+  ,"gallery-pump-video-description": "See how irrigation pumps can be operated remotely through Innovega application, without being physically present on-site."
+  ,"gallery-videos-title": "See Innovega in Action"
+  ,"gallery-videos-description": "Discover how Innovega Flow enables reliable, remote control of irrigation valves and pumps through real demonstrations from our field installations.",
+  "remote-control-schedule": "Remote Control & Scheduling",
+  "remote-control-schedule-description": "Take full control of your irrigation system from anywhere, anytime.",
+  "remote-control-schedule-point-1": "Open and close valves and control pumps remotely",
+  "remote-control-schedule-point-2": "Schedule irrigation daily or weekly",
+  "remote-control-schedule-point-3": "Manage multiple irrigation sections with ease",
+  "real-time-monitoring": "Real-Time Monitoring",
+  "real-time-monitoring-description": "Stay informed with live system data and detailed insights into your irrigation operations.",
+  "real-time-monitoring-point-1": "Monitor pumps, valves, and device connectivity",
+  "real-time-monitoring-point-2": "Track water consumption and sensor readings",
+  "real-time-monitoring-point-3": "Receive alerts on system issues, leaks and anomalies",
+  "ai-enhanced-irrigation": "AI-Enhanced Irrigation",
+  "ai-enhanced-irrigation-description": "Make smarter irrigation decisions with Vegamind AI, combining agricultural data and intelligent analysis.",
+  "ai-enhanced-irrigation-point-1": "Generate schedules based on crops, soil, and weather",
+  "ai-enhanced-irrigation-point-2": "Analyze plant water stress using images",
+  "ai-enhanced-irrigation-point-3": "Adapt irrigation plans to changing field conditions",
+  "cta-section-title": "Take control of your irrigation wherever you are",
+  "cta-section-description": "Discover how Innovega connects your irrigation equipment and brings remote control, scheduling, and monitoring into one platform.",
+  "vegamind-eyebrow": "Introducing Vegamind AI",
+  "vegamind-title": "Smarter Irrigation Begins with Better Decisions.",
+  "vegamind-description": "Vegamind combines crop characteristics, soil conditions, weather forecasts, and plant analysis with agronomic calculations to generate data-driven irrigation schedules tailored to each field.",
+  "vegamind-cta": "Discover Vegamind"
 }
-  

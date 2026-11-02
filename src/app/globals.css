@@ -10,7 +10,7 @@
 }
 
 .leaf {
-  @apply rounded-tl-full rounded-br-full;
+  @apply rounded-4xl;
 }
 
 :root {
@@ -18,7 +18,11 @@
 }
 
 html.ar {
-  --font-default: var(--font-rubik);
+  --font-default: "Cairo", sans-serif;
+}
+
+html {
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -38,4 +42,26 @@ body {
   .animate-sway {
     animation: sway 4s ease-in-out infinite;
   }
+
+}
+
+.gallery-pagination {
+  margin-top: 3rem;
+}
+
+.gallery-pagination .swiper-pagination-bullet {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+  margin: 0 0.25rem !important;
+  background: #cbd6d0 !important;
+  opacity: 1 !important;
+  transition: width 200ms ease, background-color 200ms ease, opacity 200ms ease;
+}
+
+.gallery-pagination .swiper-pagination-bullet-active {
+  width: 2rem !important;
+  height: 0.75rem !important;
+  border-radius: 9999px !important;
+  background: var(--color-secondary) !important;
+  opacity: 1 !important;
 }

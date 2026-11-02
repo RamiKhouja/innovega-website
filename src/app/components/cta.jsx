@@ -1,8 +1,12 @@
 import { useState } from "react"
 import VideoModal from "./ui/videoModal"
+import DemoRequestModal from "./ui/demo-request"
+import { useTranslation } from "react-i18next";
 
 export default function CallToAction() {
     const [openModal, setOpenModal] = useState(false)
+    const [openDemoReqModal, setOpenDemoReqModal] = useState(false)
+    const { t, i18n } = useTranslation();
     const [videoSrc, setVideoSrc] = useState('https://www.youtube.com/embed/uCZLsbdt4PM?si=wZA6bzhKM5w5693x')
   return (
     <div className="relative isolate overflow-hidden bg-primary-dark">
@@ -17,26 +21,25 @@ export default function CallToAction() {
             className="absolute top-0 -right-2 -z-10 w-auto h-1/4 lg:h-1/3 xl:h-1/2 object-cover objectcenter brightness-50 saturate-150 hidden sm:block"
         />
       <div className="px-6 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Boost your productivity. Start using our app today.
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className="text-balance text-4xl font-semibold tracking-normal leading-snug text-white sm:text-5xl">
+            {t('cta-section-title')}
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-300">
-            Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur
-            commodo do ea.
+          <p className="mx-auto mt-6 max-w-xl text-pretty text-lg text-gray-100">
+            {t('cta-section-description')}
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
-              className="rounded-md bg-white/15 px-3.5 py-2.5 text-sm font-semibold text-white ring-1 ring-inset ring-white/5 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            <button
+              onClick={() => setOpenDemoReqModal(true)}
+              className="rounded-full cursor-pointer bg-white px-3.5 py-2 text-sm font-semibold text-primary-dark shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Get started
-            </a>
+              {t('get-started')}
+            </button>
             <button 
                 onClick={() => setOpenModal(true)}
                 className="text-sm/6 font-semibold text-white hover:text-gray-300 cursor-pointer"
             >
-              See Demo <span aria-hidden="true">→</span>
+              {t('live-demo')} <span aria-hidden="true">{i18n.language==='ar' ? '←' : '→'}</span>
             </button>
           </div>
         </div>
@@ -55,6 +58,7 @@ export default function CallToAction() {
         </defs>
       </svg>
       <VideoModal open={openModal} setOpen={setOpenModal} videoSrc={videoSrc} />
+      <DemoRequestModal open={openDemoReqModal} setOpen={setOpenDemoReqModal} />
     </div>
   )
 }

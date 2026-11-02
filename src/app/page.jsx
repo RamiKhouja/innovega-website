@@ -10,6 +10,9 @@ import Partners from './components/partners'
 import Features from './components/features'
 import Contact from './components/contact'
 import Demo from './components/demo'
+import Gallery from './components/gallery'
+import VideoDemos from './components/video-demos'
+import VegamindCta from './components/vegamind-cta'
 
 export default function Home() {
 
@@ -20,11 +23,14 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Gallery />
+        <VideoDemos />
         <Services />
         <CallToAction />
-        <AboutSection />
+        {/* <AboutSection /> */}
         <Features />
-        <Demo />
+        <VegamindCta />
+        {/* <Demo /> */}
         <Partners />
         <Contact />
       </main>

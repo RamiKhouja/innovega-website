@@ -8,10 +8,11 @@ import LanguageDropdown from './ui/Dropdown'
 function Navbar() {
     const { t, i18n } = useTranslation()
     const navigation = [
+        { name: 'product', href: '#gallery-title' },
+        { name: 'video-demos-nav', href: '#gallery-videos-title' },
         { name: 'services', href: '#services' },
-        { name: 'about', href: '#about' },
         { name: 'features', href: '#features' },
-        { name: 'product', href: '#demo' },
+        { name: 'vegamind-nav', href: '#vegamind' },
         { name: 'contact', href: '#contact' },
     ]
 

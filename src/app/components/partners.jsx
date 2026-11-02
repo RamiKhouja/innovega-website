@@ -30,7 +30,7 @@ function Partners() {
   };
 
   return (
-    <div className="my-16 mx-6 md:mx-20" id='partners'>
+    <div className="my-36 mx-6 md:mx-20" id='partners'>
         <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 text-center mb-4">{t('our-partners')}</h2>
         <p className="text-center text-sm md:text-base text-gray-500 mb-12">
           {t('partners-desc')}

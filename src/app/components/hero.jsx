@@ -3,10 +3,12 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import VideoModal from './ui/videoModal'
+import DemoRequestModal from './ui/demo-request'
 
 function Hero() {
     const { t, i18n} = useTranslation()
     const [openModal, setOpenModal] = useState(false)
+    const [openDemoReqModal, setOpenDemoReqModal] = useState(false)
     const [videoSrc, setVideoSrc] = useState('https://www.youtube.com/embed/uCZLsbdt4PM?si=wZA6bzhKM5w5693x')
 
 
@@ -14,7 +16,7 @@ function Hero() {
     <div className="relative isolate">
         <svg
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+        className="absolute inset-x-0 top-0 -z-10 h-[48rem] w-full stroke-secondary/20 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
         >
         <defs>
             <pattern
@@ -40,52 +42,49 @@ function Hero() {
             aria-hidden="true"
             className={`absolute ${i18n.language === 'ar' ? 'right-1/2 left-0 -mr-24 lg:mr-24 xl:mr-48' : 'left-1/2 right-0 -ml-24 lg:ml-24 xl:ml-48'} top-0 -z-10 transform-gpu overflow-hidden blur-3xl`}
         >
-        <div
+        {/* <div
             style={{
             clipPath:
                 'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
             }}
             className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-secondary to-white opacity-30"
-        />
+        /> */}
         </div>
         <div className="overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 pb-12 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-            <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
+            <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl 2xl:max-w-3xl">
                 
                 <h1 className="text-pretty text-4xl font-semibold leading-snug text-gray-900 sm:text-6xl">
-                {t('smart-irrigation')}
+                {t('hero-title')}
                 </h1>
-                <h1 className="text-pretty text-4xl font-semibold leading-snug text-gray-900 sm:text-6xl">
-                {t('anywhere-anytime')}
-                </h1>
-                <p className="mt-8 text-pretty text-lg font-medium text-gray-600 sm:max-w-md sm:text-xl/8 lg:max-w-none">
+                <p className="mt-8 text-pretty text-lg font-medium text-primary-dark sm:max-w-md sm:text-xl/8 lg:max-w-none">
                 {t('hero-subtitle')}
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
-                <a
-                    href="#"
-                    className="rounded-full bg-primary px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                <button
+                    onClick={() => setOpenDemoReqModal(true)}
+                    className="rounded-full cursor-pointer bg-primary hover:bg-secondary-dark px-3.5 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark"
                 >
                     {t('get-started')}
-                </a>
+                </button>
                 <button 
                     onClick={() => setOpenModal(true)}
                     className="text-sm/6 font-semibold text-gray-900 cursor-pointer hover:text-secondary-dark"
                 >
-                    {t('live-demo')} <span aria-hidden="true">→</span>
+                    {t('live-demo')} <span aria-hidden="true">{i18n.language === 'ar' ? '←' : '→'}</span>
                 </button>
                 </div>
             </div>
-            <div className="flex justify-end gap-8 mt-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 xl:pl-20">
-                <div className="ml-auto w-48 lg:w-72 flex-none space-y-8 lg:order-last xl:order-none ">
+            <div className="flex justify-end gap-8 mt-16 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 xl:pl-20">
+                <div className="ml-auto w-48 lg:w-72 xl:w-80 flex-none space-y-8 lg:order-last xl:order-none ">
                 <div className="relative">
                     <img
                     alt=""
                     src="/images/hero-image.png"
-                    className="aspect-[2/3] w-full leaf bg-gray-900/5 object-cover shadow-lg"
+                    className=" w-full rounded-4xl bg-gray-900/5 object-cover shadow-lg"
                     />
-                    <div className="pointer-events-none absolute inset-0 leaf ring-1 ring-inset ring-gray-900/10" />
+                    <div className="pointer-events-none absolute inset-0 rounded-4xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
                 </div>
             </div>
@@ -93,6 +92,7 @@ function Hero() {
         </div>
         </div>
         <VideoModal open={openModal} setOpen={setOpenModal} videoSrc={videoSrc} />
+        <DemoRequestModal open={openDemoReqModal} setOpen={setOpenDemoReqModal} />
     </div>
   )
 }

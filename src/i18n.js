@@ -18,8 +18,8 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    lng: 'en',
     debug: false,
+    supportedLngs: ['en', 'fr', 'ar'],
     detection: {
       order: ['localStorage'],
       caches: ['localStorage'],

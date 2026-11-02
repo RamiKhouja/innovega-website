@@ -1,14 +1,25 @@
-import sgMail from "@sendgrid/mail";
+import nodemailer from "nodemailer";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const smtpPort = Number(process.env.SMTP_PORT || 587);
+
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: smtpPort,
+  secure: smtpPort === 465,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
 export async function sendEmail(to, subject, html) {
-  const msg = {
+  await transporter.sendMail({
     to,
-    from: process.env.SENDGRID_FROM_EMAIL,
+    from: {
+      name: process.env.SMTP_FROM_NAME || "Innovega",
+      address: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER,
+    },
     subject,
     html,
-  };
-
-  await sgMail.send(msg);
+  });
 }
