@@ -25,7 +25,7 @@ export default function Gallery() {
   const swiperRef = useRef(null)
 
   return (
-    <section className="overflow-hidden mt-8 bg-white py-20 sm:py-24" aria-labelledby="gallery-title">
+    <section id="product" className="overflow-hidden mt-8 bg-white py-20 sm:py-24" aria-labelledby="gallery-title">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 id="gallery-title" className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">

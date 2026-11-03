@@ -60,8 +60,8 @@ const features = [
 function Features() {
   const {t, i18n} = useTranslation();
     return (
-        <div className="bg-white py-24 lg:py-36" id='features'>
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="bg-white py-24">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 lg:py-8" id='features'>
                 <div className="mx-auto text-center">
                     <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-800 sm:text-5xl">{t('features-title')}</h2>
                     <p className="mt-6 text-lg/8 text-gray-600 max-w-4xl mx-auto">

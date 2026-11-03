@@ -4,16 +4,17 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, LanguageIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useTranslation } from 'react-i18next'
 import LanguageDropdown from './ui/Dropdown'
+import Link from 'next/link'
 
 function Navbar() {
     const { t, i18n } = useTranslation()
     const navigation = [
-        { name: 'product', href: '#gallery-title' },
-        { name: 'video-demos-nav', href: '#gallery-videos-title' },
-        { name: 'services', href: '#services' },
-        { name: 'features', href: '#features' },
-        { name: 'vegamind-nav', href: '#vegamind' },
-        { name: 'contact', href: '#contact' },
+        { name: 'home', href: '/' },
+        { name: 'product', href: '/#product' },
+        { name: 'services', href: '/#services' },
+        { name: 'features', href: '/#features' },
+        { name: 'vegamind-nav', href: '/vegamind' },
+        { name: 'contact', href: '/#contact' },
     ]
 
     const [languageOpen, setLanguageOpen] = useState(false);
@@ -77,9 +78,9 @@ function Navbar() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
+              <Link key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
                 {t(item.name)}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">

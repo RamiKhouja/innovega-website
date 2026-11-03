@@ -5,6 +5,7 @@
   --color-primary-dark: #0A3D4D; 
   --color-secondary: #31BC85; 
   --color-secondary-dark: #1A8B5D;
+  --color-light-mint: #E0F3E9;
   --color-tertiary: #FF5733; /* Example: a hex color */
   --color-danger: hsl(0 100% 50%); /* Example: a red using HSL */
 }
@@ -41,6 +42,46 @@ body {
 
   .animate-sway {
     animation: sway 4s ease-in-out infinite;
+  }
+
+  @keyframes vegamind-flow {
+    0% { transform: translateX(-1.75rem); opacity: 0; }
+    20%, 80% { opacity: 1; }
+    100% { transform: translateX(1.75rem); opacity: 0; }
+  }
+
+  .animate-vegamind-flow {
+    animation: vegamind-flow 2.8s ease-in-out infinite;
+  }
+
+  @keyframes vegamind-loop-left {
+    0% { transform: translate(0, -50%); opacity: 0; }
+    20%, 80% { opacity: 1; }
+    100% { transform: translate(-1.25rem, -50%); opacity: 0; }
+  }
+
+  @keyframes vegamind-loop-forward {
+    0% { transform: translate(0, -50%); opacity: 0; }
+    20%, 80% { opacity: 1; }
+    100% { transform: translate(6.5rem, -50%); opacity: 0; }
+  }
+
+  @keyframes vegamind-loop-right {
+    0% { transform: translate(0, -50%); opacity: 0; }
+    20%, 80% { opacity: 1; }
+    100% { transform: translate(1.25rem, -50%); opacity: 0; }
+  }
+
+  .animate-vegamind-loop-left {
+    animation: vegamind-loop-left 2.4s ease-in-out infinite;
+  }
+
+  .animate-vegamind-loop-forward {
+    animation: vegamind-loop-forward 2.4s ease-in-out infinite;
+  }
+
+  .animate-vegamind-loop-right {
+    animation: vegamind-loop-right 2.4s ease-in-out infinite;
   }
 
 }
