@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { PlayCircleIcon } from '@heroicons/react/24/outline'
 import { useTranslation } from 'react-i18next'
-import DemoRequestModal from './ui/demo-request'
+import DemoRequestModal from '../ui/demo-request'
 
 const videoSrc = 'https://www.youtube.com/embed/ryM-o-dXsu0?si=jg3y1DWCVxxUUW6e'
 

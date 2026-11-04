@@ -1,0 +1,12 @@
+.hero { position: relative; isolation: isolate; min-height: 760px; overflow: hidden; background: radial-gradient(circle at 84% 42%, rgba(53,199,226,.11), transparent 29rem), linear-gradient(110deg, #fff 0%, #fff 55%, #f7fcfd 100%); }
+.connectivityPattern { position: absolute; inset: 0 0 0 auto; z-index: -1; width: min(62vw, 720px); height: 100%; opacity: .8; mask-image: linear-gradient(to right, transparent, #000 18%, #000 88%, transparent); }
+:global([dir="rtl"]) .connectivityPattern { right: auto; left: 0; mask-image: linear-gradient(to left, transparent, #000 18%, #000 88%, transparent); }
+.glow { position: absolute; z-index: -1; top: 30%; right: 25%; width: 18rem; height: 18rem; border-radius: 999px; background: rgba(53,199,226,.16); filter: blur(70px); }
+:global([dir="rtl"]) .glow { right: auto; left: 25%; }
+.eyebrow { color: #35c7e2; font-size: .76rem; font-weight: 700; letter-spacing: .22em; }
+.imageFrame { position: relative; border-radius: 1.65rem; background: rgba(255,255,255,.7); box-shadow: 0 28px 70px rgba(10,61,77,.16), 0 0 0 10px rgba(53,199,226,.06); backdrop-filter: blur(8px); }
+.imageRing { position: absolute; inset: -.9rem; z-index: -1; border: 1px solid rgba(53,199,226,.3); border-radius: 2rem; pointer-events: none; }
+.statusCard { position: absolute; right: 1.3rem; bottom: -1.1rem; display: flex; align-items: center; gap: .55rem; border: 1px solid rgba(16,81,87,.1); border-radius: 999px; background: rgba(255,255,255,.94); padding: .7rem 1rem; color: #0a3d4d; font-size: .78rem; font-weight: 700; box-shadow: 0 12px 28px rgba(10,61,77,.14); backdrop-filter: blur(10px); }
+.statusDot { width: .55rem; height: .55rem; border-radius: 999px; background: #31bc85; box-shadow: 0 0 0 4px rgba(49,188,133,.15); }
+@media (max-width: 1023px) { .hero { min-height: auto; } .connectivityPattern { top: 35%; width: 100%; height: 65%; opacity: .55; } }
+@media (max-width: 640px) { .hero { background: radial-gradient(circle at 85% 68%, rgba(53,199,226,.13), transparent 18rem), #fff; } .imageRing { inset: -.55rem; } .statusCard { right: 1rem; bottom: -.9rem; } }

@@ -9,7 +9,7 @@ const services = [
     description: 'remote-control-schedule-description',
     params: ['remote-control-schedule-point-1', 'remote-control-schedule-point-2', 'remote-control-schedule-point-3'],
     imageUrl: '/images/services/control.jpg',
-    url: '#',
+    url: '/remote-control',
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const services = [
 export default function Services() {
   const { t } = useTranslation();
   return (
-    <div className="bg-white pb-24 lg:pb-32" id="services">
+    <div className="bg-white py-24 lg:py-32" id="services">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-5xl lg:mx-0">
           <h2 className="text-pretty text-4xl font-semibold leading-snug text-primary-dark sm:text-5xl">{t('our-services')}</h2>

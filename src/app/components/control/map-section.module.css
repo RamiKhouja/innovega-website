@@ -1,0 +1,5 @@
+.tabletFrame { width: 100%; max-width: 48rem; margin: 3rem auto 0; border: 1px solid rgba(10,61,77,.28); border-radius: 2rem; background: linear-gradient(145deg, #20333b, #071217); padding: .55rem .55rem 1rem; box-shadow: 0 22px 45px rgba(10,61,77,.2), inset 0 1px 0 rgba(255,255,255,.18); }
+.tabletTopBar { position: relative; display: flex; height: 1.25rem; align-items: center; justify-content: center; }
+.tabletCamera { width: .38rem; height: .38rem; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; background: #071217; box-shadow: 0 0 0 2px rgba(255,255,255,.04); }
+.tabletScreen { overflow: hidden; border-radius: 1.4rem; background: #fff; }
+.mapImage { display: block; width: 100%; height: auto; }

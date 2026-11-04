@@ -2,8 +2,36 @@
 
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import VideoModal from './ui/videoModal'
-import DemoRequestModal from './ui/demo-request'
+import VideoModal from '../ui/videoModal'
+import DemoRequestModal from '../ui/demo-request'
+import styles from './hero.module.css'
+
+function ConnectivityPattern() {
+  return (
+    <svg aria-hidden="true" className={styles.connectivityPattern} viewBox="0 0 720 620" fill="none" preserveAspectRatio="none">
+      <defs>
+        <filter id="home-control-glow" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="5" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <linearGradient id="home-control-line" x1="0" y1="0" x2="1" y2="1">
+          <stop stopColor="#1aa6a6" stopOpacity="0" />
+          <stop offset="0.45" stopColor="#1aa6a6" stopOpacity="0.55" />
+          <stop offset="1" stopColor="#1aa6a6" stopOpacity="0.08" />
+        </linearGradient>
+      </defs>
+      <g stroke="url(#home-control-line)" strokeWidth="1.5">
+        <path d="M30 120 170 80l120 100 160-40 210 125" /><path d="M80 390 210 260l125 75 125-130 215 75" />
+        <path d="M280 20 290 180l45 155 35 250" /><path d="M580 0 450 140l10 180-115 160" />
+        <path d="M170 80 210 260l-5 170 145 80" />
+      </g>
+      <g fill="#1aa6a6" filter="url(#home-control-glow)">
+        <circle cx="170" cy="80" r="4" /><circle cx="290" cy="180" r="3" /><circle cx="450" cy="140" r="4" />
+        <circle cx="335" cy="335" r="5" /><circle cx="460" cy="320" r="3" /><circle cx="350" cy="570" r="4" /><circle cx="690" cy="265" r="4" />
+      </g>
+    </svg>
+  )
+}
 
 function Hero() {
     const { t, i18n} = useTranslation()
@@ -13,10 +41,12 @@ function Hero() {
 
 
   return (
-    <div className="relative isolate">
+    <div className="relative isolate overflow-hidden">
+        <ConnectivityPattern />
+        <div className={styles.glow} />
         <svg
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 -z-10 h-[48rem] w-full stroke-secondary/20 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+        className={`absolute inset-x-0 top-0 -z-10 h-[48rem] w-full stroke-[#1aa6a6]/30 ${styles.squarePattern}`}
         >
         <defs>
             <pattern
@@ -38,20 +68,8 @@ function Hero() {
         </svg>
         <rect fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" width="100%" height="100%" strokeWidth={0} />
         </svg>
-        <div
-            aria-hidden="true"
-            className={`absolute ${i18n.language === 'ar' ? 'right-1/2 left-0 -mr-24 lg:mr-24 xl:mr-48' : 'left-1/2 right-0 -ml-24 lg:ml-24 xl:ml-48'} top-0 -z-10 transform-gpu overflow-hidden blur-3xl`}
-        >
-        {/* <div
-            style={{
-            clipPath:
-                'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
-            }}
-            className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-secondary to-white opacity-30"
-        /> */}
-        </div>
         <div className="overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 pb-12 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-7xl px-6 pb-12 pt-36 sm:pt-60 lg:px-8 lg:pt-32 lg:pb-24">
             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
             <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl 2xl:max-w-3xl">
                 
@@ -78,13 +96,13 @@ function Hero() {
             </div>
             <div className="flex justify-end gap-8 mt-16 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0 xl:pl-20">
                 <div className="ml-auto w-48 lg:w-72 xl:w-80 flex-none space-y-8 lg:order-last xl:order-none ">
-                <div className="relative">
+                <div className="relative rounded-[1.65rem] bg-white/70 shadow-[0_28px_70px_rgba(10,61,77,0.16),0_0_0_10px_rgba(26,166,166,0.08)] backdrop-blur-[8px]">
                     <img
                     alt=""
                     src="/images/hero-image.png"
                     className=" w-full rounded-4xl bg-gray-900/5 object-cover shadow-lg"
                     />
-                    <div className="pointer-events-none absolute inset-0 rounded-4xl ring-1 ring-inset ring-gray-900/10" />
+                    <div className="pointer-events-none absolute -inset-[0.9rem] -z-10 rounded-[2rem] border border-[#1aa6a6]/35" />
                 </div>
                 </div>
             </div>

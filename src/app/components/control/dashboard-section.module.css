@@ -1,0 +1,14 @@
+.hotspotCard { display: flex; width: 100%; align-items: flex-start; gap: .8rem; border: 1px solid rgba(16,81,87,.16); border-radius: 1rem; background: #fff; padding: 1rem; text-align: left; transition: border-color 200ms ease, background-color 200ms ease, box-shadow 200ms ease, transform 200ms ease; }
+.hotspotCard:hover { border-color: rgba(49,188,133,.55); transform: translateY(-1px); box-shadow: 0 10px 25px rgba(10,61,77,.06); }
+.hotspotCardActive { border-color: rgba(49,188,133,.85); background: rgba(224,243,233,.3); box-shadow: 0 10px 25px rgba(10,61,77,.06); }
+.hotspotIcon { display: grid; flex: none; place-items: center; color: #1a8b5d; }
+.hotspotIcon svg { width: 1.35rem; height: 1.35rem; stroke-width: 1.8; }
+.hotspotIcon img { width: 1.35rem; height: 1.35rem; object-fit: contain; }
+.chevron { flex: none; color: rgba(10,61,77,.4); font-size: 1.25rem; line-height: 1; transition: transform 200ms ease, color 200ms ease; }
+.chevronActive { color: #1a8b5d; transform: rotate(45deg); }
+.dashboardFrame { min-width: 0; }
+.dashboardImageWrap { position: relative; margin: 0 auto; max-width: 42rem; overflow: visible; }
+.dashboardImage { display: block; width: 100%; height: auto; }
+.dashboardRing { position: absolute; pointer-events: none; border: 2px solid transparent; border-radius: .7rem; opacity: 0; transform: scale(.98); transition: opacity 220ms ease, transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
+.dashboardRingActive { border-color: #31bc85; background: rgba(49,188,133,.08); opacity: 1; transform: scale(1); box-shadow: 0 0 0 4px rgba(49,188,133,.18), 0 0 24px rgba(49,188,133,.5); }
+@media (max-width: 639px) { .dashboardRing { border-width: 1.5px; border-radius: .5rem; } }

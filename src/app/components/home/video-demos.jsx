@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import DemoRequestModal from './ui/demo-request'
-import VideoModal from './ui/videoModal'
+import DemoRequestModal from '../ui/demo-request'
+import VideoModal from '../ui/videoModal'
 
 const galleryVideos = [
   { id: 'ZRKsIWkwL6Y', title: 'gallery-valve-video-title', description: 'gallery-valve-video-description' },

@@ -10,7 +10,7 @@ function Navbar() {
     const { t, i18n } = useTranslation()
     const navigation = [
         { name: 'home', href: '/' },
-        { name: 'product', href: '/#product' },
+        { name: 'product', href: '/remote-control' },
         { name: 'services', href: '/#services' },
         { name: 'features', href: '/#features' },
         { name: 'vegamind-nav', href: '/vegamind' },

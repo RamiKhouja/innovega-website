@@ -3,7 +3,7 @@ import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/2
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/solid';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Spinner from './ui/Spinner';
+import Spinner from '../ui/Spinner';
 
 export default function Contact() {
     const { t, i18n } = useTranslation();
