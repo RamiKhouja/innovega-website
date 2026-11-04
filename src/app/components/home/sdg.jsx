@@ -63,7 +63,7 @@ export default function Sdg() {
           {goals.map((goal) => (
             <article
               key={goal.number}
-              className="flex items-center gap-5 rounded-3xl border border-primary/10 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:gap-7 sm:p-7"
+              className="flex flex-wrap sm:flex-nowrap items-start gap-5 rounded-3xl border border-primary/10 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:gap-7 sm:p-7"
             >
               <div className="flex size-24 shrink-0 items-center justify-center rounded-xl bg-gray-50 sm:size-32">
                 <img
