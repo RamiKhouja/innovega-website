@@ -99,7 +99,7 @@ function Hero() {
                 <div className="relative rounded-[1.65rem] bg-white/70 shadow-[0_28px_70px_rgba(10,61,77,0.16),0_0_0_10px_rgba(26,166,166,0.08)] backdrop-blur-[8px]">
                     <img
                     alt=""
-                    src="/images/hero-image.png"
+                    src="/images/hero-image.jpg"
                     className=" w-full rounded-4xl bg-gray-900/5 object-cover shadow-lg"
                     />
                     <div className="pointer-events-none absolute -inset-[0.9rem] -z-10 rounded-[2rem] border border-[#1aa6a6]/35" />

@@ -10,6 +10,24 @@ export const metadata = {
   icons: {
     icon: '/favicon.ico',
   },
+  openGraph: {
+    title: 'Innovega',
+    description: 'Innovative solutions for modern farming challenges',
+    images: [
+      {
+        url: '/images/logo.png',
+        width: 400,
+        height: 267,
+        alt: 'Innovega logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Innovega',
+    description: 'Innovative solutions for modern farming challenges',
+    images: ['/images/logo.png'],
+  },
 };
 
 const oxygen = Oxygen({
