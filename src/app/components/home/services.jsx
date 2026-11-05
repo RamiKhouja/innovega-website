@@ -17,7 +17,7 @@ const services = [
     description: 'real-time-monitoring-description',
     params: ['real-time-monitoring-point-1', 'real-time-monitoring-point-2', 'real-time-monitoring-point-3'],
     imageUrl: '/images/services/monitoring.jpg',
-    url: '#',
+    url: '/monitoring',
   },
   {
     id: 3,

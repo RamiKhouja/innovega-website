@@ -1,0 +1,69 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 760px;
+  overflow: hidden;
+  background: radial-gradient(circle at 84% 42%, rgba(49, 188, 133, .12), transparent 29rem), linear-gradient(110deg, #fff 0%, #fff 55%, #f5fcf9 100%);
+}
+
+.pattern {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: -1;
+  width: min(69vw, 840px);
+  background: url('/images/sensors-pattern.png') center / cover no-repeat;
+  opacity: .5;
+  mask-image: linear-gradient(to right, transparent 0%, #000 16%, #000 78%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 14%, #000 84%, transparent 100%);
+  mask-composite: intersect;
+}
+
+:global([dir='rtl']) .pattern {
+  right: auto;
+  left: 0;
+  transform: scaleX(-1);
+  mask-image: linear-gradient(to left, transparent 0%, #000 16%, #000 78%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 14%, #000 84%, transparent 100%);
+}
+
+.glow {
+  position: absolute;
+  z-index: -1;
+  top: 30%;
+  right: 25%;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 999px;
+  background: rgba(49, 188, 133, .14);
+  filter: blur(70px);
+}
+
+:global([dir='rtl']) .glow {
+  right: auto;
+  left: 25%;
+}
+
+.imageFrame {
+  position: relative;
+  border-radius: 1.65rem;
+  background: rgba(255, 255, 255, .7);
+  box-shadow: 0 28px 70px rgba(10, 61, 77, .16), 0 0 0 10px rgba(49, 188, 133, .06);
+  backdrop-filter: blur(8px);
+}
+
+.imageRing {
+  position: absolute;
+  inset: -.9rem;
+  z-index: -1;
+  border: 1px solid rgba(49, 188, 133, .32);
+  border-radius: 2rem;
+  pointer-events: none;
+}
+
+@media (max-width: 1023px) {
+  .hero { min-height: auto; }
+  .pattern { top: 35%; width: 100%; height: 65%; opacity: .48; }
+}
+
+@media (max-width: 640px) {
+  .hero { background: radial-gradient(circle at 85% 68%, rgba(49, 188, 133, .13), transparent 18rem), #fff; }
+  .imageRing { inset: -.55rem; }
+}

@@ -1,19 +1,24 @@
 'use client'
 import React, {useEffect, useState} from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, LanguageIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, ChevronDownIcon, LanguageIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useTranslation } from 'react-i18next'
 import LanguageDropdown from './ui/Dropdown'
 import Link from 'next/link'
+import QuoteRequestModal from './ui/quote-request'
+
+const serviceLinks = [
+  { name: 'remote-control-schedule', href: '/remote-control' },
+  { name: 'real-time-monitoring', href: '/monitoring' },
+  { name: 'vegamind-nav', href: '/vegamind' },
+]
 
 function Navbar() {
     const { t, i18n } = useTranslation()
     const navigation = [
         { name: 'home', href: '/' },
-        { name: 'product', href: '/remote-control' },
-        { name: 'services', href: '/#services' },
+        { name: 'product', href: '/#product' },
         { name: 'features', href: '/#features' },
-        { name: 'vegamind-nav', href: '/vegamind' },
         { name: 'contact', href: '/#contact' },
     ]
 
@@ -38,6 +43,8 @@ function Navbar() {
     };
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [servicesOpen, setServicesOpen] = useState(false)
+    const [quoteModalOpen, setQuoteModalOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -57,14 +64,14 @@ function Navbar() {
     >
         <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
                 src="/images/logo.png"
                 className="h-8 w-auto"
               />
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -76,12 +83,23 @@ function Navbar() {
               <Bars3Icon aria-hidden="true" className="size-6" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:items-center lg:gap-x-10">
             {navigation.map((item) => (
               <Link key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
                 {t(item.name)}
               </Link>
             ))}
+            <div className="relative">
+              <button type="button" onClick={() => setServicesOpen(!servicesOpen)} className="inline-flex items-center gap-1 text-sm/6 font-semibold text-gray-900" aria-expanded={servicesOpen}>
+                {t('services')} <ChevronDownIcon className={`size-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {servicesOpen && (
+                <div className="absolute right-0 top-full z-50 mt-3 w-80 rounded-2xl bg-white p-2 shadow-xl ring-1 ring-gray-900/10">
+                  {serviceLinks.map((item) => <Link key={item.href} href={item.href} onClick={() => setServicesOpen(false)} className="block rounded-xl px-3 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50">{t(item.name)}</Link>)}
+                </div>
+              )}
+            </div>
+            <button type="button" onClick={() => setQuoteModalOpen(true)} className="rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark">{t('request-quote')}</button>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <LanguageDropdown />
@@ -91,14 +109,14 @@ function Navbar() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img
                   alt=""
                   src="/images/logo.png"
                   className="h-8 w-auto"
                 />
-              </a>
+              </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
@@ -121,6 +139,15 @@ function Navbar() {
                       {t(item.name)}
                     </a>
                   ))}
+                  <div>
+                    <button type="button" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen} className="-mx-3 flex w-full items-center justify-between rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                      {t('services')} <ChevronDownIcon className={`size-5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {servicesOpen && <div className="space-y-1 rounded-xl bg-gray-50 p-2">
+                      {serviceLinks.map((item) => <a key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-white">{t(item.name)}</a>)}
+                    </div>}
+                  </div>
+                  <button type="button" onClick={() => { setMobileMenuOpen(false); setQuoteModalOpen(true) }} className="mt-3 w-full rounded-lg bg-primary px-4 py-3 text-center text-base font-semibold text-white hover:bg-primary-dark">{t('request-quote')}</button>
                 </div>
                 
                 <div className="py-6">
@@ -166,6 +193,7 @@ function Navbar() {
             </div>
           </DialogPanel>
         </Dialog>
+        <QuoteRequestModal open={quoteModalOpen} setOpen={setQuoteModalOpen} />
     </header>
   )
 }
