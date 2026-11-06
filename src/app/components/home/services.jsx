@@ -46,9 +46,9 @@ export default function Services() {
           className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
         >
           {services.map((service) => (
-            <Link key={service.id} href={service.url} className="shadow-md hover:bg-gray-50 rounded-2xl hover:shadow-sm cursor-pointer">
+            <Link key={service.id} href={service.url} className="flex h-full flex-col rounded-2xl shadow-md hover:bg-gray-50 hover:shadow-sm cursor-pointer">
               <img alt="" src={service.imageUrl} className="w-full max-h-60 rounded-t-2xl object-cover" />
-              <div className="p-4 pb-6 mt-2">
+              <div className="mt-2 flex flex-1 flex-col p-4 pb-6">
                 <h3 className="text-lg/8 font-semibold tracking-tight text-gray-900">{t(service.name)}</h3>
                 <p className="mt-2 text-gray-700">{t(service.description)}</p>
                 <ul className="mt-3 text-gray-700 space-y-2 flex-1">
@@ -59,6 +59,7 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+                <span className="mt-6 inline-flex self-end rounded-full border border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-white">{t('view-service')}</span>
               </div>
             </Link>
           ))}

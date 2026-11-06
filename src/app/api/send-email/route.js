@@ -27,8 +27,7 @@ export async function POST(req) {
       <p>${message}</p>
     `;
 
-    //await sendEmail("contact@innovega.tn", subject, html);
-    await sendEmail("innovegatn@gmail.com", subject, html);
+    await sendEmail("contact@innovega.tn", subject, html);
 
     return NextResponse.json({ success: true });
   } catch (error) {
