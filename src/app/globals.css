@@ -50,9 +50,10 @@ html.dark .cta-demo-button { background-color: #ffffff; color: #0a3d4d; }
 html.dark .cta-demo-button:hover { background-color: #f3f4f6; color: #0a3d4d; }
 html.dark .contact-pattern .fill-white,
 html.dark .contact-pattern .fill-gray-50 { fill: #010807; }
-.partner-logo-dark { display: none; }
-html.dark .partner-logo-light { display: none; }
-html.dark .partner-logo-dark { display: block; }
+.partner-logo-light { display: block !important; }
+.partner-logo-dark { display: none !important; }
+html.dark .partner-logo-light { display: none !important; }
+html.dark .partner-logo-dark { display: block !important; }
 html.dark .vegamind-cta-button { background-color: #ffffff; color: #0a3d4d; }
 html.dark .vegamind-cta-button:hover { background-color: #f3f4f6; color: #0a3d4d; }
 html.dark .vegamind-hero { background: #032c28; }
