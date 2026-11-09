@@ -82,7 +82,7 @@ export default function Contact() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-            <div className={`absolute inset-y-0 ${i18n.language==='ar' ? 'right-0' : 'left-0'} -z-10 w-full overflow-hidden bg-secondary/5 lg:w-1/2 
+            <div className={`contact-pattern absolute inset-y-0 ${i18n.language==='ar' ? 'right-0' : 'left-0'} -z-10 w-full overflow-hidden bg-secondary/5 lg:w-1/2
                 [mask-image:radial-gradient(ellipse_at_center,black,transparent)] 
                 [mask-repeat:no-repeat] 
                 [mask-size:100%_100%]`}

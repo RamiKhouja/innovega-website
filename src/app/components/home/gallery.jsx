@@ -88,7 +88,7 @@ export default function Gallery() {
       </div>
 
       <Dialog open={Boolean(selectedItem)} onClose={() => setSelectedItem(null)} className="relative z-50">
-        <DialogBackdrop transition className="fixed inset-0 bg-gray-500/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200" />
+        <DialogBackdrop transition className="modal-backdrop fixed inset-0 bg-gray-500/75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200" />
         <div className="fixed inset-0 z-50 w-screen overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-8">
             <DialogPanel

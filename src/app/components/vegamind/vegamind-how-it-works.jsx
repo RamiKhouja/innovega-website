@@ -18,7 +18,7 @@ export default function VegamindHowItWorks() {
         <div className="mx-auto max-w-3xl text-center">
           {/* <p className="text-sm font-semibold uppercase tracking-[0.22em] text-secondary">{t('vegamind-how-eyebrow')}</p> */}
           <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">{t('vegamind-how-eyebrow')}</h2>
-          <p className="mt-5 text-pretty text-base leading-7 text-primary-dark/75 sm:text-lg">{t('vegamind-how-intro')}</p>
+          <p className="mt-5 text-pretty text-base leading-7 text-primary-dark/75 dark:text-gray-200 sm:text-lg">{t('vegamind-how-intro')}</p>
         </div>
 
         <div className="relative mt-12 overflow-hidden rounded-[1.5rem] border border-secondary bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-12">
@@ -28,10 +28,10 @@ export default function VegamindHowItWorks() {
             <div className="grid items-center gap-8 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:gap-4 lg:gap-8">
               {steps.map(({ key, icon: Icon }, index) => (
                 <div key={key} className="contents">
-                  <div className={`relative flex min-h-32 flex-col items-center justify-center rounded-2xl px-4 text-center ${key === 'vegamind' ? 'bg-light-mint shadow-[0_0_40px_rgba(49,188,133,0.08)] ring-1 ring-secondary/20' : ''}`}>
+                  <div className={`vegamind-how-card relative flex min-h-32 flex-col items-center justify-center rounded-2xl px-4 text-center ${key === 'vegamind' ? 'vegamind-core-card bg-light-mint shadow-[0_0_40px_rgba(49,188,133,0.08)] ring-1 ring-secondary/20' : ''}`}>
                     <Icon className="size-7 text-secondary" aria-hidden="true" />
                     <h3 className="mt-3 text-base font-semibold uppercase tracking-wide text-primary-dark">{t(`vegamind-how-${key}`)}</h3>
-                    <p className="mt-2 max-w-[15rem] text-sm leading-5 text-primary-dark/75">{t(`vegamind-how-${key}-description`)}</p>
+                    <p className="mt-2 max-w-[15rem] text-sm leading-5 text-primary-dark/75 dark:text-gray-200">{t(`vegamind-how-${key}-description`)}</p>
                   </div>
                   {index < steps.length - 1 && (
                     <div className="relative flex h-8 items-center justify-center md:h-auto md:w-14" aria-hidden="true">

@@ -39,8 +39,13 @@ const oxygen = Oxygen({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={oxygen.variable}>
+    <html lang="en" className={oxygen.variable} suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => { try { if (localStorage.getItem('innovega-theme') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {} })()`,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

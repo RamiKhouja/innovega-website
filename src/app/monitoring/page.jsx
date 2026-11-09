@@ -16,7 +16,7 @@ export default function MonitoringPage() {
   const { i18n } = useTranslation()
 
   return (
-    <div className="min-h-screen bg-white" dir={i18n.dir()}>
+    <div className="monitoring-page min-h-screen bg-white" dir={i18n.dir()}>
       <Navbar />
       <main>
         <MonitoringHero />

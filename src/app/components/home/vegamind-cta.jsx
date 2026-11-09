@@ -36,7 +36,7 @@ export default function VegamindCta() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-secondary">{t('vegamind-eyebrow')}</p>
           <h2 className="mt-5 max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">{t('vegamind-title')}</h2>
           <p className="mt-5 max-w-3xl text-pretty text-base leading-7 text-white/95 sm:text-lg lg:text-xl sm:leading-8">{t('vegamind-description')}</p>
-          <Link href="/vegamind" className="mt-8 inline-flex items-center rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-primary shadow-sm transition hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+          <Link href="/vegamind" className="vegamind-cta-button mt-8 inline-flex items-center rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-primary shadow-sm transition hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
             {t('vegamind-cta')}
             <span className="ml-2" aria-hidden="true">{i18n.language === 'ar' ? '←' : '→'}</span>
           </Link>

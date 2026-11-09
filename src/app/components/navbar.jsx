@@ -1,7 +1,7 @@
 'use client'
 import React, {useEffect, useRef, useState} from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, ChartBarIcon, ChevronDownIcon, CpuChipIcon, LanguageIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, ChartBarIcon, ChevronDownIcon, CpuChipIcon, LanguageIcon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useTranslation } from 'react-i18next'
 import LanguageDropdown from './ui/Dropdown'
 import Link from 'next/link'
@@ -59,8 +59,13 @@ function Navbar() {
     const [servicesOpen, setServicesOpen] = useState(false)
     const [quoteModalOpen, setQuoteModalOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
     const desktopServicesRef = useRef(null)
     const mobileServicesRef = useRef(null)
+
+    useEffect(() => {
+      setDarkMode(document.documentElement.classList.contains('dark'))
+    }, [])
 
     useEffect(() => {
       const onScroll = () => {
@@ -70,6 +75,13 @@ function Navbar() {
       window.addEventListener('scroll', onScroll);
       return () => window.removeEventListener('scroll', onScroll);
     }, []);
+
+    const toggleDarkMode = () => {
+      const nextDarkMode = !darkMode
+      document.documentElement.classList.toggle('dark', nextDarkMode)
+      localStorage.setItem('innovega-theme', nextDarkMode ? 'dark' : 'light')
+      setDarkMode(nextDarkMode)
+    }
 
     useEffect(() => {
       const closeOnOutsideClick = (event) => {
@@ -85,7 +97,7 @@ function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'backdrop-blur bg-white/70 dark:bg-gray-50/60' : ''
+        scrolled ? `backdrop-blur ${darkMode ? 'bg-[#010807]/80' : 'bg-white/70'}` : ''
       }`}
     >
         <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
@@ -94,16 +106,24 @@ function Navbar() {
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
-                src="/images/logo.png"
+                src={darkMode ? '/images/logo-white.png' : '/images/logo.png'}
                 className="h-8 w-auto"
               />
             </Link>
           </div>
-          <div className="flex lg:hidden">
+          <div className="flex items-center gap-1 lg:hidden">
+            <button
+              type="button"
+              onClick={toggleDarkMode}
+              className="rounded-full cursor-pointer p-2.5 text-primary-dark transition hover:bg-primary-dark hover:text-white dark:text-white dark:hover:bg-white/10"
+              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {darkMode ? <SunIcon aria-hidden="true" className="size-5" /> : <MoonIcon aria-hidden="true" className="size-5" />}
+            </button>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-white"
             >
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="size-6" />
@@ -111,17 +131,17 @@ function Navbar() {
           </div>
           <div className="hidden lg:flex lg:items-center lg:gap-x-10">
             {navigation.map((item) => (
-              <Link key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
+              <Link key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900 dark:text-white">
                 {t(item.name)}
               </Link>
             ))}
             <div ref={desktopServicesRef} className="relative">
-              <button type="button" onClick={() => setServicesOpen(!servicesOpen)} className="inline-flex items-center gap-1 text-sm/6 font-semibold text-gray-900" aria-expanded={servicesOpen}>
+              <button type="button" onClick={() => setServicesOpen(!servicesOpen)} className="inline-flex items-center gap-1 text-sm/6 font-semibold text-gray-900 dark:text-white" aria-expanded={servicesOpen}>
                 {t('services')} <ChevronDownIcon className={`size-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
               </button>
               {servicesOpen && (
-                <div className="absolute right-0 top-full z-50 mt-3 w-80 rounded-2xl bg-white p-2 shadow-xl ring-1 ring-gray-900/10">
-                  {serviceLinks.map((item) => <Link key={item.href} href={item.href} onClick={() => setServicesOpen(false)} className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50"><ServiceIcon icon={item.icon} />{t(item.name)}</Link>)}
+                <div className="absolute right-0 top-full z-50 mt-3 w-80 rounded-2xl bg-white p-2 shadow-xl ring-1 ring-gray-900/10 dark:bg-[#071311] dark:ring-white/10">
+                  {serviceLinks.map((item) => <Link key={item.href} href={item.href} onClick={() => setServicesOpen(false)} className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/10"><ServiceIcon icon={item.icon} />{t(item.name)}</Link>)}
                 </div>
               )}
             </div>
@@ -129,6 +149,9 @@ function Navbar() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <LanguageDropdown />
+            <button type="button" onClick={toggleDarkMode} className="ml-4 cursor-pointer rounded-full p-2 text-primary-dark transition hover:bg-primary-dark hover:text-white dark:text-white dark:hover:bg-white/10" aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+              {darkMode ? <SunIcon className="size-5" /> : <MoonIcon className="size-5" />}
+            </button>
           </div>
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden" dir={ i18n.language === 'ar' ? 'rtl' : 'ltr' }>
@@ -139,14 +162,14 @@ function Navbar() {
                 <span className="sr-only">Your Company</span>
                 <img
                   alt=""
-                  src="/images/logo.png"
+                  src={darkMode ? '/images/logo-white.png' : '/images/logo.png'}
                   className="h-8 w-auto"
                 />
               </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-white"
               >
                 <span className="sr-only">Close menu</span>
                 <XMarkIcon aria-hidden="true" className="size-6" />
@@ -160,17 +183,17 @@ function Navbar() {
                       key={item.name}
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/10"
                     >
                       {t(item.name)}
                     </a>
                   ))}
                   <div ref={mobileServicesRef}>
-                    <button type="button" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen} className="-mx-3 flex w-full items-center justify-between rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                    <button type="button" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen} className="-mx-3 flex w-full items-center justify-between rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/10">
                       {t('services')} <ChevronDownIcon className={`size-5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                     </button>
-                    {servicesOpen && <div className="space-y-1 rounded-xl bg-gray-50 p-2">
-                      {serviceLinks.map((item) => <a key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-white"><ServiceIcon icon={item.icon} />{t(item.name)}</a>)}
+                    {servicesOpen && <div className="space-y-1 rounded-xl bg-gray-50 p-2 dark:bg-white/10">
+                      {serviceLinks.map((item) => <a key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-white dark:text-gray-200 dark:hover:bg-white/10"><ServiceIcon icon={item.icon} />{t(item.name)}</a>)}
                     </div>}
                   </div>
                   <button type="button" onClick={() => { setMobileMenuOpen(false); setQuoteModalOpen(true) }} className="mt-3 w-full rounded-lg bg-primary px-4 py-3 text-center text-base font-semibold text-white hover:bg-primary-dark">{t('request-quote')}</button>
@@ -179,7 +202,7 @@ function Navbar() {
                 <div className="py-6">
                   <button
                     onClick={() => setLanguageOpen(!languageOpen)}
-                    className="-mx-3 flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/10"
                   >
                     <div className='flex items-center gap-x-2'>
                       <LanguageIcon  className="w-5 h-5 text-primary" />
@@ -207,13 +230,17 @@ function Navbar() {
                             handleChange(lang.code);
                             
                           }}
-                          className={`block w-full rounded-lg px-3 py-2 ${i18n.language==='ar'?'text-right':'text-left'} text-sm font-medium text-gray-700 hover:bg-gray-100`}
+                          className={`block w-full rounded-lg px-3 py-2 ${i18n.language==='ar'?'text-right':'text-left'} text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-white/10`}
                         >
                           {lang.label}
                         </button>
                       ))}
                     </div>
                   )}
+                  <button type="button" onClick={toggleDarkMode} className="-mx-3 mt-3 flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/10">
+                    {darkMode ? <SunIcon className="size-5 text-primary" /> : <MoonIcon className="size-5 text-primary" />}
+                    {darkMode ? 'Light mode' : 'Dark mode'}
+                  </button>
                 </div>
               </div>
             </div>

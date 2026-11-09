@@ -19,7 +19,7 @@ export default function WaterReports() {
   const [activeReport, setActiveReport] = useState('daily')
 
   return (
-    <section id="water-reports" className="bg-light-mint px-6 py-20 sm:px-10 sm:py-24 lg:px-8">
+    <section id="water-reports" className="water-reports-section bg-light-mint px-6 py-20 sm:px-10 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-secondary-dark">

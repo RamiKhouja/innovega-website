@@ -1,6 +1,7 @@
 .connectivityPattern { position: absolute; inset: 0 0 0 auto; z-index: -1; width: min(62vw, 720px); height: 100%; opacity: .6; mask-image: linear-gradient(to right, transparent, #000 18%, #000 88%, transparent), linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%); mask-composite: intersect; -webkit-mask-composite: source-in; }
 :global([dir="rtl"]) .connectivityPattern { right: auto; left: 0; mask-image: linear-gradient(to left, transparent, #000 18%, #000 88%, transparent), linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%); }
 .squarePattern { mask-image: radial-gradient(32rem 32rem at center, #fff, transparent), linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%); mask-composite: intersect; -webkit-mask-composite: source-in; }
+:global(html.dark) .squarePattern :global(.fill-gray-50) { fill: transparent; }
 .glow { position: absolute; z-index: -1; top: 30%; right: 25%; width: 18rem; height: 18rem; border-radius: 999px; background: rgba(26,166,166,.16); filter: blur(70px); }
 :global([dir="rtl"]) .glow { right: auto; left: 25%; }
 @media (max-width: 1023px) { .connectivityPattern { top: 35%; width: 100%; height: 65%; opacity: .3; } }

@@ -20,7 +20,7 @@ export default function MonitoringVegamindCta() {
         </p>
         <Link
           href="/vegamind"
-          className="mt-6 inline-flex items-center rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-primary-dark shadow-sm transition hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="vegamind-cta-button mt-6 inline-flex items-center rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-primary-dark shadow-sm transition hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           {t('monitoring-vegamind-cta')}
           <span className="ml-2" aria-hidden="true">{i18n.language === 'ar' ? '←' : '→'}</span>

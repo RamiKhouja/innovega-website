@@ -24,14 +24,14 @@ export default function VegamindPage() {
       <Navbar />
 
       <main>
-        <section className="relative isolate overflow-hidden bg-light-mint">
+        <section className="vegamind-hero relative isolate overflow-hidden bg-light-mint">
           <img
             src="/images/ai-pattern.png"
             alt=""
             aria-hidden="true"
             className={`pointer-events-none absolute inset-0 h-full w-full object-cover opacity-25 ${i18n.language === 'ar' ? '-scale-x-100' : ''}`}
           />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white via-white/75 to-transparent" />
+          <div className="vegamind-hero-fade pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white via-white/75 to-transparent" />
 
           <div className="relative mx-auto flex min-h-[760px] max-w-7xl items-center px-6 pb-32 pt-36 sm:px-10 lg:min-h-[820px] lg:px-8 lg:pb-40 lg:pt-40">
 
@@ -42,14 +42,14 @@ export default function VegamindPage() {
                 <h1 className="text-balance text-xl font-semibold leading-[1.08] tracking-tight text-primary-dark sm:text-6xl lg:text-7xl">
                   {t('vegamind-hero-title')}
                 </h1>
-                <p className="mt-7 max-w-3xl text-pretty text-lg leading-8 text-primary-dark/80 sm:text-xl sm:leading-9">
+                <p className="vegamind-hero-description mt-7 max-w-3xl text-pretty text-lg leading-8 text-primary-dark/80 sm:text-xl sm:leading-9">
                   {t('vegamind-hero-description')}
                 </p>
                 <div className="mt-10 flex flex-wrap items-center gap-4">
                   <button
                     type="button"
                     onClick={() => setVideoOpen(true)}
-                    className="rounded-full cursor-pointer bg-primary px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/15 transition hover:bg-primary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark flex gap-x-2"
+                    className="vegamind-hero-button rounded-full cursor-pointer bg-primary px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/15 transition hover:bg-primary-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark flex gap-x-2"
                   >
                     <PlayIcon className={`h-5 w-5 ${i18n.language === 'ar' ? '-scale-x-100' : ''}`} aria-hidden="true" />
                     {t('vegamind-watch-demo')}

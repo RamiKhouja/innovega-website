@@ -43,7 +43,7 @@ export default function Sdg() {
   const { t } = useTranslation()
 
   return (
-    <section id="sdg" className="bg-gradient-to-b from-white via-light-mint to-white px-6 py-20 sm:py-28">
+    <section id="sdg" className="sdg-section bg-gradient-to-b from-white via-light-mint to-white px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <img
@@ -54,7 +54,7 @@ export default function Sdg() {
           <h2 className="mt-6 text-3xl font-bold tracking-tight text-primary-dark sm:text-4xl">
             {t('sdg-title')}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg">
+          <p className="sdg-description mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg">
             {t('sdg-description')}
           </p>
         </div>

@@ -21,7 +21,7 @@ export default function ArchitectureSection() {
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div className={styles.architectureDiagram}>
-            <p className="text-center text-sm mb-4 font-semibold uppercase tracking-[0.18em] text-primary-dark/55">{t('architecture-diagram-label')}</p>
+            <p className="text-center text-sm mb-4 font-semibold uppercase tracking-[0.18em] text-primary-dark/55 dark:text-gray-100">{t('architecture-diagram-label')}</p>
 
             <div className={styles.diagramNode}>
               <ComputerDesktopIcon className={styles.nodeIcon} aria-hidden="true" />

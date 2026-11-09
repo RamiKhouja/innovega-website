@@ -42,7 +42,7 @@ export default function ScheduleSection() {
               <div className={styles.activeStep}>
                 <span className="text-xs font-semibold uppercase tracking-[0.14em] text-secondary-dark">{t('schedule-step-label')} {activeStep + 1}</span>
                 <h3 className="mt-3 text-xl font-semibold text-primary-dark sm:text-2xl">{t(`schedule-step-${step.key}-title`)}</h3>
-                <p className="mt-2 text-base leading-7 text-primary-dark/70 sm:text-lg">{t(`schedule-step-${step.key}-description`)}</p>
+                <p className="mt-2 text-base leading-7 text-primary-dark/70 dark:text-gray-200 sm:text-lg">{t(`schedule-step-${step.key}-description`)}</p>
               </div>
 
               <div className="mt-3 grid gap-3 grid-cols-2 sm:grid-cols-4">

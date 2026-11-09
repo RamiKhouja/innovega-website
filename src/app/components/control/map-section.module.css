@@ -3,3 +3,4 @@
 .tabletCamera { width: .38rem; height: .38rem; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; background: #071217; box-shadow: 0 0 0 2px rgba(255,255,255,.04); }
 .tabletScreen { overflow: hidden; border-radius: 1.4rem; background: #fff; }
 .mapImage { display: block; width: 100%; height: auto; }
+:global(html.dark) .tabletScreen { background: #071311; }

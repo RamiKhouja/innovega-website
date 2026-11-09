@@ -17,11 +17,11 @@ export default function VegamindInAction() {
         <div className={i18n.language === 'ar' ? 'lg:order-2' : ''}>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-secondary">{t('vegamind-action-eyebrow')}</p>
           <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">{t('vegamind-action-title')}</h2>
-          <p className="mt-6 max-w-xl text-pretty text-base leading-8 text-white/90 sm:text-lg">{t('vegamind-action-description')}</p>
+          <p className="vegamind-action-description mt-6 max-w-xl text-pretty text-base leading-8 text-white/90 sm:text-lg">{t('vegamind-action-description')}</p>
           <button
             type="button"
             onClick={() => setDemoOpen(true)}
-            className="mt-8 rounded-full bg-white px-5 py-3 text-sm font-semibold text-primary-dark shadow-lg shadow-black/10 transition hover:bg-light-mint focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="vegamind-action-button mt-8 rounded-full bg-white px-5 py-3 text-sm font-semibold text-primary-dark shadow-lg shadow-black/10 transition hover:bg-light-mint focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             {t('vegamind-action-request-demo')}
           </button>
@@ -42,7 +42,7 @@ export default function VegamindInAction() {
               </div>
             </div>
           </div>
-          <div className="mt-4 flex items-center justify-center gap-2 text-sm text-white/70">
+          <div className="vegamind-action-caption mt-4 flex items-center justify-center gap-2 text-sm text-white/70">
             <PlayCircleIcon className="size-5 text-secondary" aria-hidden="true" />
             <span>{t('vegamind-action-caption')}</span>
           </div>

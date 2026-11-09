@@ -12,3 +12,5 @@
 .reportRing { position: absolute; pointer-events: none; border: 1px solid transparent; border-radius: .8rem; opacity: 0; transform: scale(.98); transition: opacity 220ms ease, transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
 .reportRingActive { border-color: #31bc85;  opacity: 1; transform: scale(1); box-shadow: 0 0 0 4px rgba(49,188,133,.18), 0 0 24px rgba(49,188,133,.5); }
 @media (max-width: 639px) { .reportRing { border-width: 1.5px; border-radius: .5rem; } }
+:global(html.dark) .periodButton { background: rgba(7,19,17,.72); color: #fff; border-color: rgba(213,223,220,.2); }
+:global(html.dark) .reportCard, :global(html.dark) .reportCardActive { background: rgba(7,19,17,.78); border-color: rgba(213,223,220,.18); }

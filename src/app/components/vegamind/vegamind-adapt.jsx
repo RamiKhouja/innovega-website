@@ -28,7 +28,7 @@ export default function VegamindAdapt() {
           </div> */}
           <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-secondary-dark">{t('vegamind-adapt-eyebrow')}</p>
           <h2 className="mt-4 text-balance text-3xl font-semibold leading-snug tracking-tight text-primary-dark sm:text-5xl">{t('vegamind-adapt-title')}</h2>
-          <p className="mx-auto mt-6 max-w-3xl text-pretty text-base leading-8 text-primary-dark/75 sm:text-lg">{t('vegamind-adapt-description')}</p>
+          <p className="vegamind-adapt-description mx-auto mt-6 max-w-3xl text-pretty text-base leading-8 text-primary-dark/75 sm:text-lg">{t('vegamind-adapt-description')}</p>
         </div>
 
         <div className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
@@ -40,7 +40,7 @@ export default function VegamindAdapt() {
           ))}
         </div>
 
-        <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-6 text-primary-dark/75">{t('vegamind-adapt-footnote')}</p>
+        <p className="vegamind-adapt-footnote mx-auto mt-10 max-w-3xl text-center text-sm leading-6 text-primary-dark/75">{t('vegamind-adapt-footnote')}</p>
       </div>
     </section>
   )

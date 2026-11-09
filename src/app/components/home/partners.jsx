@@ -37,10 +37,12 @@ function Partners() {
         </p>
       <Slider {...settings}>
         <div>
-            <img src="/images/partners/level1.png" alt="Level1" className="w-auto h-28 mx-auto" />
+            <img src="/images/partners/level1.png" alt="Level1" className="partner-logo-light w-auto h-28 mx-auto" />
+            <img src="/images/partners/level1-white.png" alt="Level1" className="partner-logo-dark w-auto h-28 mx-auto" />
         </div>
         <div>
-            <img src="/images/partners/startupact.png" alt="StartupAct" className="w-auto h-28 mx-auto" />
+            <img src="/images/partners/startupact.png" alt="StartupAct" className="partner-logo-light w-auto h-28 mx-auto" />
+            <img src="/images/partners/startupact-white.png" alt="StartupAct" className="partner-logo-dark w-auto h-28 mx-auto" />
         </div>
         <div>
             <img src="/images/partners/almardia.png" alt="Almardia" className="w-auto h-28 mx-auto" />

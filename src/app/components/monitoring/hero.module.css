@@ -67,3 +67,5 @@
   .hero { background: radial-gradient(circle at 85% 68%, rgba(49, 188, 133, .13), transparent 18rem), #fff; }
   .imageRing { inset: -.55rem; }
 }
+:global(html.dark) .hero { background: radial-gradient(circle at 84% 42%, rgba(49, 188, 133, .12), transparent 29rem), linear-gradient(110deg, #010807 0%, #010807 55%, #071311 100%); }
+:global(html.dark) .imageFrame { background: rgba(7, 19, 17, .72); }

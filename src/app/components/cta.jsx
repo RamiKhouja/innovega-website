@@ -31,7 +31,7 @@ export default function CallToAction() {
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <button
               onClick={() => setOpenDemoReqModal(true)}
-              className="rounded-full cursor-pointer bg-white px-3.5 py-2 text-sm font-semibold text-primary-dark shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="cta-demo-button rounded-full cursor-pointer bg-white px-3.5 py-2 text-sm font-semibold text-primary-dark shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               {t('get-started')}
             </button>

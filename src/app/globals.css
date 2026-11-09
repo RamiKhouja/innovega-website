@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-primary: #105157;
@@ -24,8 +25,74 @@ html.ar {
 
 html {
   scroll-padding-top: 5rem;
+  color-scheme: light;
+  background: #fff;
 }
 
+html.dark {
+  color-scheme: dark;
+  background: #010807;
+}
+
+html.dark body {
+  background: #010807;
+  color: #f8faf9;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+html.dark .bg-white { background-color: #010807; }
+html.dark .bg-gray-50 { background-color: #071311; }
+html.dark .text-primary,
+html.dark .text-primary-dark { color: #ffffff; }
+html.dark .text-primary-dark\/85 { color: #f9fafb; }
+html.dark .text-primary-dark\/65 { color: #f9fafb; }
+html.dark .cta-demo-button { background-color: #ffffff; color: #0a3d4d; }
+html.dark .cta-demo-button:hover { background-color: #f3f4f6; color: #0a3d4d; }
+html.dark .contact-pattern .fill-white,
+html.dark .contact-pattern .fill-gray-50 { fill: #010807; }
+.partner-logo-dark { display: none; }
+html.dark .partner-logo-light { display: none; }
+html.dark .partner-logo-dark { display: block; }
+html.dark .vegamind-cta-button { background-color: #ffffff; color: #0a3d4d; }
+html.dark .vegamind-cta-button:hover { background-color: #f3f4f6; color: #0a3d4d; }
+html.dark .vegamind-hero { background: #032c28; }
+html.dark .vegamind-hero-fade { background: linear-gradient(to top, #010807, rgba(1, 8, 7, .72), transparent); }
+html.dark .vegamind-hero-description,
+html.dark .vegamind-action-description,
+html.dark .vegamind-action-caption { color: #d5dfdc; }
+html.dark .vegamind-hero-button { background-color: #ffffff; color: #0a3d4d; }
+html.dark .vegamind-hero-button:hover { background-color: #f3f4f6; color: #0a3d4d; }
+html.dark .vegamind-action-button { background-color: #ffffff; color: #0a3d4d; }
+html.dark .vegamind-action-button:hover { background-color: #e0f3e9; color: #0a3d4d; }
+html.dark .vegamind-core-card { background-color: #0d3b31; }
+html.dark .vegamind-adapt-description,
+html.dark .vegamind-adapt-footnote { color: #c7f0df; }
+html.dark .modal-backdrop { background-color: rgba(0, 0, 0, .84); }
+html.dark .monitoring-page .text-primary-dark\/65,
+html.dark .monitoring-page .text-primary-dark\/70,
+html.dark .monitoring-page .text-primary-dark\/75,
+html.dark .monitoring-page .text-primary-dark\/85 { color: #f3f4f6; }
+html.dark .monitoring-page .water-reports-section { background: #0b3a31; }
+html.dark .language-dropdown-menu { background-color: #071311; box-shadow: 0 10px 25px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.12); }
+html.dark .language-dropdown-option { color: #d5dfdc; }
+html.dark .language-dropdown-option[data-focus] { background-color: rgba(255,255,255,.12); color: #ffffff; }
+html.dark .sdg-section { background: linear-gradient(180deg, #071a15 0%, #0b2a21 52%, #071a15 100%); }
+html.dark .sdg-description { color: #d5dfdc; }
+html.dark .text-gray-900,
+html.dark .text-gray-800 { color: #ffffff; }
+html.dark .text-gray-700,
+html.dark .text-gray-600 { color: #d5dfdc; }
+html.dark .text-gray-500 { color: #b4c1bd; }
+html.dark .border-gray-200,
+html.dark .outline-gray-300 { border-color: rgba(213, 223, 220, .24); outline-color: rgba(213, 223, 220, .24); }
+html.dark input,
+html.dark textarea,
+html.dark select { background-color: #071311; color: #fff; }
+html.dark input::placeholder,
+html.dark textarea::placeholder { color: #8fa09a; }
+html.dark .hover\:bg-gray-50:hover { background-color: rgba(255,255,255,.08); }
+html.dark .hover\:bg-gray-100:hover { background-color: rgba(255,255,255,.1); }
+html.dark .hover\:bg-gray-200:hover { background-color: rgba(255,255,255,.14); }
 body {
   font-family: var(--font-default), sans-serif;
 }

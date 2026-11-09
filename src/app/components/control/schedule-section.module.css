@@ -9,3 +9,7 @@
 .tabletScreen { overflow: hidden; border-radius: 1.4rem; background: #fff; }
 .scheduleImage { display: block; width: 100%; height: auto; }
 @media (min-width: 640px) { .schedulePanel { padding: 2rem 0; } }
+:global(html.dark) .schedulePanel, :global(html.dark) .tabletScreen, :global(html.dark) .stepButton { background: #010807; }
+:global(html.dark) .stepButton { color: rgba(213,223,220,.72); border-color: rgba(213,223,220,.2); }
+:global(html.dark) .stepButton:hover, :global(html.dark) .stepButtonActive { color: #fff; }
+:global(html.dark) .stepButtonActive { background: rgba(49,188,133,.14); }
