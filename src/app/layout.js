@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Oxygen } from 'next/font/google';
 
 export const metadata = {
+  metadataBase: new URL('https://innovega.tn'),
   title: 'Innovega',
   description: 'Innovative solutions for modern farming challenges',
   icons: {
