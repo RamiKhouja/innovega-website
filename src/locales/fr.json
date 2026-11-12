@@ -123,6 +123,8 @@
     "close": "Fermer",
     "demo-request-sent": "Votre demande de démonstration a été envoyée avec succès !",
     "live-demo": "Voir comment ça marche",
+    "video-modal-title": "Découvrez notre déploiement dans une ferme au Qatar",
+    "video-modal-description": "Découvrez comment Innovega transforme la gestion de l’irrigation dans une vraie ferme au Qatar.",
     "who-we-are": "Qui sommes-nous",
     "about-p1": "Innovega est une entreprise IoT basée en Tunisie, spécialisée dans le développement de systèmes agricoles intelligents de pointe.",
     "about-p2": "Notre premier produit, Innovega Flow, est un système d'irrigation entièrement sans fil et connecté à Internet, conçu pour des exploitations de toute taille.",

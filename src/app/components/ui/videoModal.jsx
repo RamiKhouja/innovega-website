@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
 
-export default function VideoModal({ open, setOpen, videoSrc, title = 'Watch our demo video', description = 'Discover how Innovega can transform your irrigation management with our innovative solutions.' }) {
+export default function VideoModal({ open, setOpen, videoSrc, title, description }) {
+  const { t, i18n } = useTranslation()
 
   return (
     <div>
@@ -27,10 +28,10 @@ export default function VideoModal({ open, setOpen, videoSrc, title = 'Watch our
                     referrerPolicy="strict-origin-when-cross-origin" 
                     allowFullScreen
                 ></iframe>
-                <div className="m-4">
-                  <p className="text-lg lg:text-2xl font-semibold text-gray-800">{title}</p>
+                <div className={`m-4 ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+                  <p className="text-lg lg:text-xl xl:text-2xl font-semibold text-gray-800">{title || t('video-modal-title')}</p>
                   <p className="text-sm lg:text-base md:mt-2 text-gray-700 max-w-full md:max-w-3/4">
-                    {description}
+                    {description || t('video-modal-description')}
                   </p>
                 </div>
             </DialogPanel>

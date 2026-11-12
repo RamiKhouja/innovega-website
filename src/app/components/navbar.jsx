@@ -149,7 +149,7 @@ function Navbar() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <LanguageDropdown />
-            <button type="button" onClick={toggleDarkMode} className="ml-4 cursor-pointer rounded-full p-2 text-primary-dark transition hover:bg-primary-dark hover:text-white dark:text-white dark:hover:bg-white/10" aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+            <button type="button" onClick={toggleDarkMode} className={`${i18n.language === 'ar' ? 'mr-4' : 'ml-4'} cursor-pointer rounded-full p-2 text-primary-dark transition hover:bg-primary-dark hover:text-white dark:text-white dark:hover:bg-white/10`} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
               {darkMode ? <SunIcon className="size-5" /> : <MoonIcon className="size-5" />}
             </button>
           </div>

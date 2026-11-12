@@ -7,7 +7,7 @@ export default function CallToAction() {
     const [openModal, setOpenModal] = useState(false)
     const [openDemoReqModal, setOpenDemoReqModal] = useState(false)
     const { t, i18n } = useTranslation();
-    const [videoSrc, setVideoSrc] = useState('https://www.youtube.com/embed/uCZLsbdt4PM?si=wZA6bzhKM5w5693x')
+    const [videoSrc, setVideoSrc] = useState('https://www.youtube.com/embed/_KoE-OiIUOo?si=vlHO51PT0NHwQqjR')
   return (
     <div className="relative isolate overflow-hidden bg-primary-dark">
         <img

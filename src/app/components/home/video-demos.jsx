@@ -14,7 +14,7 @@ export default function VideoDemos() {
   const { t, i18n } = useTranslation()
   const [openDemoReqModal, setOpenDemoReqModal] = useState(false)
   const [openVideoModal, setOpenVideoModal] = useState(false)
-  const videoSrc = 'https://www.youtube.com/embed/uCZLsbdt4PM?si=wZA6bzhKM5w5693x'
+  const videoSrc = 'https://www.youtube.com/embed/_KoE-OiIUOo?si=vlHO51PT0NHwQqjR'
 
   return (
     <section className="bg-gray-50 py-20 sm:py-24" aria-labelledby="gallery-videos-title">
